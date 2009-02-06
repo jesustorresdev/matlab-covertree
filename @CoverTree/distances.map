@@ -1,0 +1,9 @@
+CT {
+	global:
+		dist_ervdu;
+		dist_ervdl;
+		dist_ervsu;
+		dist_ervsl;
+	local:
+		*;
+};
