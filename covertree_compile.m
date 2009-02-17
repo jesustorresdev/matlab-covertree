@@ -25,9 +25,8 @@ function covertree_compile(target)
         % Compile auxiliary library of distances
         % % Supplement variables already defined (e.g. LDFLAGS) only works if
         % % mex is executed from shell.
-        cmd = ['mex ' MEXOPTS ' distances.cc ' ...
-            '-lmwlapack -lmwblas LDFLAGS=' char(39) ...
-            '$LDFLAGS \"-Wl,--version-script,distances.map\"' char(39)];
+        cmd = ['mex ' MEXOPTS ' distances.cc -lmwlapack -lmwblas ' ...
+            'LDFLAGS=''$LDFLAGS \"-Wl,--version-script,distances.map\"'''];
         disp(cmd);
         system(cmd);
     catch ME
