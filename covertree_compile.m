@@ -1,5 +1,5 @@
 function covertree_compile(target)
-%CoverTreeMAKE Summary of this function goes here
+%COVERTREE_COMPILE Summary of this function goes here
 %   Detailed explanation goes here
 
     MEXOPTS = [];
