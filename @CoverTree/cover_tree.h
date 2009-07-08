@@ -89,7 +89,7 @@ struct ds_node {
 double base = 1.3;
 
 int scale_min = -2700; // for base 1.3 and normal doubles
-int scale_len = 5406; // for base 1.3 and normal doubles
+int scale_len = 5405; // for base 1.3 and normal doubles
 
 double il2 = 1. / log(base);
 inline double dist_of_scale (int s)
