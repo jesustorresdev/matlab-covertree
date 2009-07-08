@@ -37,7 +37,7 @@ struct CallbackParam
       mleval_function(NULL), mlfunc_function(NULL), object_handle(NULL) {}
 };
 
-typedef static double (*DistanceCallback)(mxArray*, mxArray*, double);
+typedef static float (*DistanceCallback)(mxArray*, mxArray*, float);
 typedef static void (*MexCallback)(int, mxArray*[], int, const mxArray*[],
                                    const CallbackParam&);
 
@@ -131,8 +131,8 @@ static Function functions[] = {
   {NULL, NULL}
 };
 
-static double distanceMlevalCallback(mxArray *p1, mxArray *p2,
-                                     double upper_bound)
+static float distanceMlevalCallback(mxArray *p1, mxArray *p2,
+                                    float upper_bound)
 {
   mxArray *plhs = NULL;
   mxArray *ub = mxCreateDoubleScalar(upper_bound);
@@ -144,15 +144,15 @@ static double distanceMlevalCallback(mxArray *p1, mxArray *p2,
                       "Distance function must return a numeric scalar");
   }
 
-  double dist = mxGetScalar(plhs);
+  float dist = mxGetScalar(plhs);
   mxDestroyArray(ub);
   mxDestroyArray(plhs);
 
   return dist;
 }
 
-static double distanceMlfuncCallback(mxArray *p1, mxArray *p2,
-                                     double upper_bound)
+static float distanceMlfuncCallback(mxArray *p1, mxArray *p2,
+                                    float upper_bound)
 {
   mxArray *plhs = NULL;
   mxArray *ub = mxCreateDoubleScalar(upper_bound);
@@ -165,7 +165,7 @@ static double distanceMlfuncCallback(mxArray *p1, mxArray *p2,
                       CT->distance.param.mlfunc_function);
   }
 
-  double dist = mxGetScalar(plhs);
+  float dist = mxGetScalar(plhs);
   mxDestroyArray(ub);
   mxDestroyArray(plhs);
 
@@ -454,7 +454,7 @@ static void ctEpsilonNearestNeighbor(int nlhs, mxArray *plhs[],
     plhs[0] = mxCreateCellMatrix(0, 0);
     return;
   }
-  double epsilon = mxGetScalar(prhs[2]);
+  float epsilon = (float)mxGetScalar(prhs[2]);
 
   v_array<v_array<d_node<mxArray*> > > results;
   epsilon_nearest_neighbor(CT->root_node, query_ct->root_node, results,

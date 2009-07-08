@@ -12,9 +12,9 @@ const int BATCH = 152;
 // type:      real vectors
 // precision: double
 // labelled:  false
-extern "C" double dist_ervdu(const mxArray *p1,
-                             const mxArray *p2,
-                             double upper_bound)
+extern "C" float dist_ervdu(const mxArray *p1,
+                            const mxArray *p2,
+                            float upper_bound)
 {
   return vectorsEuclideanDistance<double, 0, BATCH>(p1, p2, upper_bound);
 }
@@ -23,9 +23,9 @@ extern "C" double dist_ervdu(const mxArray *p1,
 // type:      real vectors
 // precision: double
 // labelled:  true
-extern "C" double dist_ervdl(const mxArray *p1,
-                             const mxArray *p2,
-                             double upper_bound)
+extern "C" float dist_ervdl(const mxArray *p1,
+                            const mxArray *p2,
+                            float upper_bound)
 {
   return vectorsEuclideanDistance<double, 1, BATCH>(p1, p2, upper_bound);
 }
@@ -34,9 +34,9 @@ extern "C" double dist_ervdl(const mxArray *p1,
 // type:      real vectors
 // precision: single
 // labelled:  false
-extern "C" double dist_ervsu(const mxArray *p1,
-                             const mxArray *p2,
-                             double upper_bound)
+extern "C" float dist_ervsu(const mxArray *p1,
+                            const mxArray *p2,
+                            float upper_bound)
 {
   return vectorsEuclideanDistance<float, 0, BATCH>(p1, p2, upper_bound);
 }
@@ -45,9 +45,9 @@ extern "C" double dist_ervsu(const mxArray *p1,
 // type:      real vectors
 // precision: single
 // labelled:  true
-extern "C" double dist_ervsl(const mxArray *p1,
-                             const mxArray *p2,
-                             double upper_bound)
+extern "C" float dist_ervsl(const mxArray *p1,
+                            const mxArray *p2,
+                            float upper_bound)
 {
   return vectorsEuclideanDistance<float, 1, BATCH>(p1, p2, upper_bound);
 }
@@ -56,9 +56,9 @@ extern "C" double dist_ervsl(const mxArray *p1,
 // type:      real vectors
 // precision: uint8
 // labelled:  false
-extern "C" double dist_ervbu(const mxArray *p1,
-                             const mxArray *p2,
-                             double upper_bound)
+extern "C" float dist_ervbu(const mxArray *p1,
+                            const mxArray *p2,
+                            float upper_bound)
 {
   return vectorsEuclideanDistance<uint8_t, 0, BATCH>(p1, p2, upper_bound);
 }
@@ -67,9 +67,9 @@ extern "C" double dist_ervbu(const mxArray *p1,
 // type:      real vectors
 // precision: uint8
 // labelled:  true
-extern "C" double dist_ervbl(const mxArray *p1,
-                             const mxArray *p2,
-                             double upper_bound)
+extern "C" float dist_ervbl(const mxArray *p1,
+                            const mxArray *p2,
+                            float upper_bound)
 {
   return vectorsEuclideanDistance<uint8_t, 1, BATCH>(p1, p2, upper_bound);
 }
@@ -83,7 +83,7 @@ void mexFunction(int nlhs, mxArray *plhs[], int nrhs, const mxArray *prhs[])
     mexErrMsgTxt("Too few input arguments.");
 
   const mxArray *p1 = prhs[0], *p2 = prhs[1];
-  double d, upper_bound = MAXDOUBLE;
+  float d, upper_bound = MAXFLOAT;
 
   if (nrhs > 2)
       upper_bound = mxGetScalar(prhs[2]);

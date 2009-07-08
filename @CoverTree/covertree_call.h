@@ -5,10 +5,10 @@
 
 struct CallbackParam;
 
-static double distanceMlevalCallback(mxArray *p1, mxArray *p2,
-                                     double upper_bound);
-static double distanceMlfuncCallback(mxArray *p1, mxArray *p2,
-                                     double upper_bound);
+static float distanceMlevalCallback(mxArray *p1, mxArray *p2,
+                                    float upper_bound);
+static float distanceMlfuncCallback(mxArray *p1, mxArray *p2,
+                                    float upper_bound);
 static void serializeMlevalCallback(int nlhs, mxArray *plhs[],
                                     int nrhs, const mxArray *prhs[],
                                     const CallbackParam &param);
