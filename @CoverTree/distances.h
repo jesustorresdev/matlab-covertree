@@ -50,9 +50,9 @@ double dot(const double *v1, const double *v2, int n)
 
 template<class T, int offset, int batch>
 inline
-float vectorsEuclideanDistance(const mxArray *pm_p1,
-                               const mxArray *pm_p2,
-                               float upper_bound)
+double vectorsEuclideanDistance(const mxArray *pm_p1,
+                                const mxArray *pm_p2,
+                                double upper_bound)
 {
   const T *p2 = (const T*)mxGetData(pm_p2) + offset;
   const T *p1 = (const T*)mxGetData(pm_p1) + offset;
