@@ -1,0 +1,6 @@
+These are the people who have contributed to this code.
+
+John Langford, jl@hunch.net, original implementation
+Dinoj Suredran, dinojs@gmail.com, templatization
+Omid Madani, Omid.Madani@overture.com, sparse_point code
+Jesús Torres, jmtorres@ull.es, matlab binding
