@@ -2,6 +2,8 @@ function covertree_compile(target)
 %COVERTREE_COMPILE Summary of this function goes here
 %   Detailed explanation goes here
 
+%   Written by Jesús Torres <jmtorres@ull.es>
+
     MEXOPTS = [];
 
     if nargin > 0
