@@ -2,6 +2,8 @@ function s = makeDistanceFcnString(fname, shlib)
 %MAKEDISTANCEFCNSTRING Summary of this function goes here
 %   Detailed explanation goes here
 
+%   Written by Jesús Torres <jmtorres@ull.es>
+
     if nargin < 1
         error ('Too few input arguments.');
     end

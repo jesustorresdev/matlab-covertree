@@ -1,5 +1,6 @@
 /* First written by John Langford jl@hunch.net
    Templatization by Dinoj Surendran dinojs@gmail.com
+   Matlab binding by Jesús Torres jmtorres@ull.es
 */
 
 // the files below may not need to be included

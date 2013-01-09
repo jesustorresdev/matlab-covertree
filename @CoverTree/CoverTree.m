@@ -2,6 +2,8 @@ classdef CoverTree < handle
 %COVERTREE Cover Tree data structure.
 %   See http://hunch.net/~jl/projects/cover_tree/cover_tree.html
 
+%   Written by Jesús Torres <jmtorres@ull.es>
+
    properties (SetAccess = private, GetAccess = private)
        CoverTreeHandle = []                       % Cover Tree root node
 
