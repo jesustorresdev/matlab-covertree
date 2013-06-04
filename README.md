@@ -12,6 +12,29 @@ and a FAQ about that code could be retrieved from the previous link.
 
 ## Installation
 
+### Requirements
+
+ * A C++ compatible compiler for MATLAB (only tested with g++ in Linux)
+ * A MATLAB configured to use that C++ compiler to build MEX.
+ * Boost.Serialization (>= 1.36)
+
+### Build & set up the environment
+
+ 1. Donwload the repository to a directory and go there from within MATLAB.
+ 2. Edit [covertree_compile.m](covertree_compile.m) and check that Boost.Serialization shared library filename at [line 23](covertree_compile.m#L23) is ok.
+ 3. Run [covertree_compile](covertree_compile.m).
+
+After the compiler successfully ends, we need to take some steps before using the toobox:
+
+ 1. Because `covertree_call` MEX depends on Boost.Serialization shared library, we must add its path
+    (p. ej. '/usr/lib/') to LD_LIBRARY_PATH environment variable:
+    
+        setenv('LD_LIBRARY_PATH', [getenv('LD_LIBRARY_PATH') '/usr/lib/']);
+
+ 2. Probably you what to add the repository directory to MATLAB search path with:
+ 
+        addpath('/path/to/repository/directory');
+
 ## Usage
 
 Cover tree data structures could be handled through CoverTree class instances or
@@ -104,7 +127,7 @@ on an initialized CoverTree object without points.
     <ol>
       <li>Name of the file from which to load the data structure.</li>
       <li>The string "text" if we want to retrieve a structure stored in text
-format or "binary" (default) if we want to retrieve a structure stored in binary
+format or "binary" (by default) if we want to retrieve a structure stored in binary
 format <strong>(optional)</strong>.</li>
     </ol></li>
   </ul>
@@ -246,8 +269,8 @@ format (default).</li>
     <li><strong>Input arguments:</strong>
     <ol>
       <li>Name of the file from which to load the data structure.</li>
-      <li> The string "text" to save the structure in text format or "binary"
-to save in binary format (default).</li>
+      <li> The string "text" to save the structure in text format or "binary" (by default)
+           to save in binary format.</li>
     </ol></li>
   </ul></dd>
   <dt>delete</dt><dd>Frees the memory and other resources reserved by the
