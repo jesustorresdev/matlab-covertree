@@ -22,11 +22,11 @@ calling directly the operations supported by the covertree_call MEX.
 CoverTree methods:
 
 <dl>
-  <dt>CoverTree()</ dt><dd>Create a new CoverTree object, inserting the points
+  <dt>CoverTree()</dt><dd>Create a new CoverTree object, inserting the points
 specified in the first argument and setting the object as indicated by the
 remaining options.
   <ul>
-    <li><strong>Input arguments:</strong></li>
+    <li><strong>Input arguments:</strong>
     <ol>
       <li>An single point or a cell array of points <strong>(optional)</strong>.
       <li>The string "DistanceFcn" followed by a distance function to be used
@@ -35,7 +35,7 @@ remaining options.
           process the points before to serialize the tree <strong>(optional)</strong>.</li>
       <li>The string "PostDeserializeFcn" followed by the function which
           process the points after to serialize the tree <strong>(optional)</strong>.</li>
-    </ol>
+    </ol></li>
     <li><strong>Output arguments:</strong><br>A new CoverTree class object.</li>
   </ul></dd>
   <dt>insert()</dt><dd>Insert new points in the tree.
@@ -45,11 +45,11 @@ remaining options.
   </ul></dd>
   <dt>kNN()</dt><dd>Find the k nearest neighbors to specified points.
   <ul>
-    <li><strong>Input arguments:</strong></li>
+    <li><strong>Input arguments:</strong>
     <ol>
       <li>A CoverTree object containing the points to query.</li>
       <li>The number of k neighbors to find.</li>
-    </ol>
+    </ol></li>
     <li><strong>Output arguments:</strong></li>
     <ol>
       <li>A cell array containing an element for each point queried.
@@ -64,13 +64,13 @@ as in the first output argument.</li>
   <dt>epsilonNN()</dt><dd>Search the ε-approximate nearest neighbors to the
 specified points.
   <ul>
-    <li><strong>Input arguments:</strong></li>
+    <li><strong>Input arguments:</strong>
     <ol>
       <li>A CoverTree object containing the points to query.</li>
       <li> The value of ε, which defines the radius around the queried point
            where you want to find the nearest neighbors.</li>
-    </ol>
-    <li><strong>Output arguments:</strong></li>
+    </ol></li>
+    <li><strong>Output arguments:</strong>
     <ol>
       <li>A cell array containing an element for each point queried.
 Each of these elements is another cell array. The first one is the point
@@ -79,14 +79,14 @@ queried and the remaining are the ε-approximate neighbors.</li>
 Each of these elements is a vector with the distances
 between the nearest neighbors and the point queried, placed in the same order
 as in the first output argument.</li>
-    </ol>
+    </ol></li>
   </ul></dd>
   <dt>unequalNN()</dt><dd>Find the nearest neighbor but not equal to the points
 specified.
   <ul>
     <li><strong>Input arguments:</strong><br>
     A CoverTree object containing the points to query.</li>
-    <li><strong>Output arguments:</strong></li>
+    <li><strong>Output arguments:</strong>
     <ol>
       <li>A cell array containing an element for each point queried.
 Each of these elements is another cell array with 2 elements. The first
@@ -95,27 +95,27 @@ one is the point queried and the other is the nearest neighbor.</li>
 Each of these elements is a vector with the distances between the nearest
 neighbors and the point queried, placed in the same order as in the first
 output argument.</li>
-    </ol>
+    </ol></li>
   </ul></dd>
   <dt>load()</dt><dd>Load a Cover Tree from the specified file. It must be invoked
 on an initialized CoverTree object without points.
   <ul>
-    <li><strong>Input arguments:</strong></li>
+    <li><strong>Input arguments:</strong>
     <ol>
       <li>Name of the file from which to load the data structure.</li>
       <li>The string "text" if we want to retrieve a structure stored in text
 format or "binary" (default) if we want to retrieve a structure stored in binary
 format <strong>(optional)</strong>.</li>
-    </ol>
-  </ Ul>
+    </ol></li>
+  </ul>
   <dt>save()</dt><dd>Save the Tree Object Tree Cover to a file.
   <ul>
-    <li><strong>Input arguments:</strong></li>
+    <li><strong>Input arguments:</strong>
     <ol>
       <li>Name of the file from which to load the data structure.</li>
       <li>The string "text" to save the structure in text format or "binary"
 (default) to save in binary format <strong>(optional)</strong>.</li>
-    </ol>
+    </ol></li>
   </ul></dd>
   <dt>delete</dt><dd>Destroy the CoverTree object.
   </dd>
@@ -159,12 +159,12 @@ specified.
   </ul></dd>
   <dt>k_nearest_neighbor</dt><dd>Find the k nearest neighbors to specified points.
   <ul>
-    <li><strong>Input arguments:</strong></li>
+    <li><strong>Input arguments:</strong>
     <ol>
       <li>A Cover Tree handler containing the points to query.</li>
       <li>The number of k neighbors to find.</li>
-    </ol>
-    <li><strong>Output arguments:</strong></li>
+    </ol></li>
+    <li><strong>Output arguments:</strong>
     <ol>
       <li>A cell array containing an element for each point queried.
 Each of these elements is another cell array with k+1 elements. The first
@@ -173,18 +173,18 @@ one is the point queried and the remaining are the k nearest neighbors.</li>
 Each of these elements is a vector of dimension k+1 with the distances
 between the nearest neighbors and the point queried, placed in the same order
 as in the first output argument.</li>
-    </ol>
+    </ol></li>
   </ul></dd>
   <dt>epsilon_nearest_neighbor</dt><dd>Search the ε-approximate nearest neighbors to the
 specified points.
   <ul>
-    <li><strong>Input arguments:</strong></li>
+    <li><strong>Input arguments:</strong>
     <ol>
       <li>A Cover Tree handler containing the points to query.</li>
       <li> The value of ε, which defines the radius around the queried point
            where you want to find the nearest neighbors.</li>
-    </ol>
-    <li><strong>Output arguments:</strong></li>
+    </ol></li>
+    <li><strong>Output arguments:</strong>
     <ol>
       <li>A cell array containing an element for each point queried.
 Each of these elements is another cell array. The first one is the point
@@ -193,7 +193,7 @@ queried and the remaining are the ε-approximate neighbors.</li>
 Each of these elements is a vector with the distances
 between the nearest neighbors and the point queried, placed in the same order
 as in the first output argument.</li>
-    </ol>
+    </ol></li>
   </ul></dd>
   <dt>unequal_nearest_neighbor</dt><dd>Find the nearest neighbor but not equal to the points
 specified.
@@ -209,23 +209,23 @@ one is the point queried and the other is the nearest neighbor.</li>
 Each of these elements is a vector with the distances between the nearest
 neighbors and the point queried, placed in the same order as in the first
 output argument.</li>
-    </ol>
+    </ol></li>
   </ul></dd>
-  <dt>breadth_dist</dt><dd>Returns the number of children of each node of Cover Tree
+  <dt>breadth_dist</dt><dd>Returns the number of children of each node of Cover Tree.
   <ul>
     <li><strong>Output arguments:</strong><br>
     It is a vector with an element per node that
 contains the number of children of every node.</li>
   </ul></dd>
   <dt>depth_dist</dt><dd>Returns the number of implicit levels between each node and
-the root of Cover Tree
+the root of Cover Tree.
   <ul>
     <li><strong>Output arguments:</strong><br>
     It is a vector with an element per node that contains the implicit level
 distance from each explicit node to the root.</li>
   </ul></dd>
   <dt>height_dist</dt><dd>Returns the maximum number of explicit levels below
-each Cover Tree node
+each Cover Tree node.
   <ul>
     <li><strong>Output arguments:</strong><br>
     It is a vector with an element per node that
@@ -233,22 +233,22 @@ contains the maximum number of explicit levels below each node.</li>
   </ul></dd>
   <dt>load</dt><dd>Load a Cover Tree from the specified file.
   <ul>
-    <li><strong>Input arguments:</strong></li>
+    <li><strong>Input arguments:</strong>
     <ol>
       <li>Name of the file from which to load the data structure.</li>
       <li>The string "text" if we want to retrieve a structure stored in text
 format or "binary" if we want to retrieve a structure stored in binary
 format (default).</li>
-    </ol>
+    </ol></li>
   </ul></dd>
   <dt>save</dt><dd>Save the Cover Tree to a file.
   <ul>
-    <li> <strong> Input arguments:</strong>
+    <li><strong>Input arguments:</strong>
     <ol>
       <li>Name of the file from which to load the data structure.</li>
       <li> The string "text" to save the structure in text format or "binary"
 to save in binary format (default).</li>
-    </ol>
+    </ol></li>
   </ul></dd>
   <dt>delete</dt><dd>Frees the memory and other resources reserved by the
 specified Cover Tree.</dd>
