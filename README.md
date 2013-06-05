@@ -31,7 +31,7 @@ After the compiler successfully ends, we need to take some steps before using th
     
         setenv('LD_LIBRARY_PATH', [getenv('LD_LIBRARY_PATH') '/usr/lib/']);
 
- 2. Probably you what to add the repository directory to MATLAB search path with:
+ 2. Probably you what to add the repository directory to MATLAB search path:
  
         addpath('/path/to/repository/directory');
 
